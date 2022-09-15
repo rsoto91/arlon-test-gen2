@@ -1,5 +1,0 @@
-resources:
-- capi-eks-quickstart.yaml
-
-configurations:
-- configurations.yaml
