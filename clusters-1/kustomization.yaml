@@ -1,5 +1,0 @@
-resources:
-- capi-quickstart.yaml
-
-configurations:
-- configurations.yaml
