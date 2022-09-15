@@ -2,7 +2,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
   name: capi-eks-quickstart
-  namespace: default
 spec:
   clusterNetwork:
     pods:
@@ -21,7 +20,6 @@ apiVersion: controlplane.cluster.x-k8s.io/v1beta1
 kind: AWSManagedControlPlane
 metadata:
   name: capi-eks-quickstart-control-plane
-  namespace: default
 spec:
   region: us-west-2
   sshKeyName: trilok
@@ -31,7 +29,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachinePool
 metadata:
   name: capi-eks-quickstart-pool-0
-  namespace: default
 spec:
   clusterName: capi-eks-quickstart
   replicas: 3
@@ -49,5 +46,4 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AWSManagedMachinePool
 metadata:
   name: capi-eks-quickstart-pool-0
-  namespace: default
 spec: {}
