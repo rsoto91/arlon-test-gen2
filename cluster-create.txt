@@ -1,0 +1,13 @@
+clusterctl generate cluster capi-quickstart \
+  --kubernetes-version v1.23.8 \
+  --control-plane-machine-count=3 \
+  --worker-machine-count=3 \
+  --infrastructure aws \
+  > capi-quickstart.yaml
+
+
+arlon basecluster preparegit --repo-url https://github.com/jayanth-tjvrr/arlon-test-gen2 --repo-path clusters-1
+
+arlon basecluster validategit --repo-url https://github.com/jayanth-tjvrr/arlon-test-gen2 --repo-path clusters-1
+
+arlon cluster create --cluster-name gen2-kubeadm-2 --repo-url https://github.com/jayanth-tjvrr/arlon-test-gen2 --repo-path clusters-1 --profile dynamic-1
