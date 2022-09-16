@@ -2,7 +2,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
   name: capi-quickstart
-  namespace: default
 spec:
   clusterNetwork:
     pods:
@@ -21,7 +20,6 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AWSCluster
 metadata:
   name: capi-quickstart
-  namespace: default
 spec:
   region: us-west-2
   sshKeyName: jayanth
@@ -30,7 +28,6 @@ apiVersion: controlplane.cluster.x-k8s.io/v1beta1
 kind: KubeadmControlPlane
 metadata:
   name: capi-quickstart-control-plane
-  namespace: default
 spec:
   kubeadmConfigSpec:
     clusterConfiguration:
@@ -62,7 +59,6 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AWSMachineTemplate
 metadata:
   name: capi-quickstart-control-plane
-  namespace: default
 spec:
   template:
     spec:
@@ -74,7 +70,6 @@ apiVersion: cluster.x-k8s.io/v1beta1
 kind: MachineDeployment
 metadata:
   name: capi-quickstart-md-0
-  namespace: default
 spec:
   clusterName: capi-quickstart
   replicas: 3
@@ -98,7 +93,6 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: AWSMachineTemplate
 metadata:
   name: capi-quickstart-md-0
-  namespace: default
 spec:
   template:
     spec:
@@ -110,7 +104,6 @@ apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
 kind: KubeadmConfigTemplate
 metadata:
   name: capi-quickstart-md-0
-  namespace: default
 spec:
   template:
     spec:
