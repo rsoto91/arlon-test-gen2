@@ -1,0 +1,21 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.clusterName }}-calico
+  namespace: argocd
+  finalizers:
+  # This solves issue #17
+  - resources-finalizer.argocd.argoproj.io/foreground
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    name: {{ .Values.clusterName }}
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/jayanth-tjvrr/arlon-test
+    path: bundles/calico
+    targetRevision: HEAD
