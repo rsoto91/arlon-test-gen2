@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.clusterName }}-redis
+  name: {{ .Values.clusterName }}-calico
   namespace: argocd
   finalizers:
   # This solves issue #17
@@ -17,5 +17,5 @@ spec:
   project: default
   source:
     repoURL: https://github.com/jayanth-tjvrr/arlon-test
-    path: bundles/redis
+    path: bundles/calico
     targetRevision: HEAD
