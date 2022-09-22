@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.clusterName }}-redi
+  name: {{ .Values.clusterName }}-redis
   namespace: argocd
   finalizers:
   # This solves issue #17
