@@ -16,6 +16,6 @@ spec:
     namespace: default
   project: default
   source:
-    repoURL: https://github.com/jayanth-tjvrr/arlon-test
+    repoURL: redis
     path: bundles/redis
     targetRevision: HEAD
